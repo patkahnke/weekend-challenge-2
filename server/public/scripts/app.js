@@ -39,18 +39,18 @@ loadData();
   }
 
   function setUpOnePerson(data) {
-    $('.name').text(data.mu[0].name);
-    $('.git-user-name').text(data.mu[0].git_username);
-    $('.shoutout').text(data.mu[0].shoutout);
+    $('.name').text('Name: ' + data.mu[0].name);
+    $('.git-user-name').text('Git Username: ' + data.mu[0].git_username);
+    $('.shoutout').text('Shoutout: ' + data.mu[0].shoutout);
     $('#carousel-points').children().first().addClass('clicked');
   }
 
   function displayPreviousPerson() {
     var $el = $('#carousel-points').find('.clicked').prev();
       $('#fade').fadeOut('slow', function() {
-        $('.name').text($el.data('name'));
-        $('.git-user-name').text($el.data('git_username'));
-        $('.shoutout').text($el.data('shoutout'));
+        $('.name').text('Name: ' + $el.data('name'));
+        $('.git-user-name').text('Git Username: ' + $el.data('git_username'));
+        $('.shoutout').text('Shoutout: ' + $el.data('shoutout'));
         $('#fade').fadeIn( 'slow');
       });
     $el.parent().find('.clicked').removeClass('clicked')
@@ -62,9 +62,9 @@ loadData();
   function displayNextPerson() {
     var $el = $('#carousel-points').find('.clicked').next();
     $('#fade').fadeOut('slow', function() {
-    $('.name').text($el.data('name'));
-    $('.git-user-name').text($el.data('git_username'));
-    $('.shoutout').text($el.data('shoutout'));
+    $('.name').text('Name: ' + $el.data('name'));
+    $('.git-user-name').text('Git Username: ' + $el.data('git_username'));
+    $('.shoutout').text('Shoutout: ' + $el.data('shoutout'));
     $('#fade').fadeIn( 'slow');
     });
     $el.parent().find('.clicked').removeClass('clicked')
@@ -78,9 +78,9 @@ loadData();
   }
 
   function displayClickedPerson() {
-    $('.name').text($(this).data('name'));
-    $('.git-user-name').text($(this).data('git_username'));
-    $('.shoutout').text($(this).data('shoutout'));
+    $('.name').text('Name: ' + $(this).data('name'));
+    $('.git-user-name').text('Git Username: ' + $(this).data('git_username'));
+    $('.shoutout').text('Shoutout: ' + $(this).data('shoutout'));
     $(this).parent().find('.clicked').removeClass('clicked')
     $(this).addClass('clicked');
     clearInterval(tenSecondTimer);
