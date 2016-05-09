@@ -35,6 +35,7 @@ loadData();
     $el.data('name', data.mu[i].name);
     $el.data('git_username', data.mu[i].git_username);
     $el.data('shoutout', data.mu[i].shoutout);
+    $el.append('<h4>' + data.mu[i].name + '</h4');
     };
   }
 
